@@ -1,0 +1,17 @@
+{
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "google", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "max-len": "error",
+    "prettier/prettier": ["error", { "singleQuote": true }]
+  },
+  "parserOptions": {
+    "requireConfigFile": false
+  }
+}
