@@ -1,0 +1,48 @@
+@import "variables";
+
+@mixin no-select() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-left() {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-row-space-between() {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin button($color: $green, $size: 32px) {
+  height: $size;
+  width: $size;
+  color: $button-border-dark-color;
+  border: solid 1px $button-border-dark-color;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  @include no-select;
+
+  i {
+    font-size: 18px;
+  }
+
+  &:hover {
+    color: $green;
+    border: solid 1px $green;
+  }
+}
