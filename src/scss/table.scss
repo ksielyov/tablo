@@ -7,14 +7,16 @@
   left: 0;
   top: $header-height + $info-cell-height;
   overflow-x: auto;
+  background-color: #F8F9FA;
+
 
   .excel__table__row {
     display: flex;
     height: $info-cell-height;
-    background-color: #F8F9FA;
     font-size: 12px;
 
     .excel__table__row__numeric {
+      flex-shrink: 0;
       @include flex-center;
       width: $info-cell-width;
       height: 100%;
@@ -23,6 +25,7 @@
     }
 
     .excel__table__row__content {
+      flex-shrink: 0;
       @include flex-center;
       min-width: $info-cell-width;
       width: 120px;
@@ -33,6 +36,7 @@
     }
 
     .excel__table__row__cell {
+      flex-shrink: 0;
       @extend .excel__table__row__content;
       @include flex-center-left;
       background-color: #fff;
@@ -43,10 +47,10 @@
 
     .active {
       border: none;
-      outline: 2px solid $green;
+      outline: 1px solid $green;
       z-index: 2;
-      //height: $info-cell-height - 1px;
-      //width: 119px;
+      height: $info-cell-height - 1px;
+      width: 120px;
     }
   }
 }
