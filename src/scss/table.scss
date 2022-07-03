@@ -6,22 +6,47 @@
   right: 0;
   left: 0;
   top: $header-height + $info-cell-height;
+  overflow-x: auto;
 
   .excel__table__row {
     display: flex;
     height: $info-cell-height;
+    background-color: #F8F9FA;
+    font-size: 12px;
 
     .excel__table__row__numeric {
       @include flex-center;
       width: $info-cell-width;
       height: 100%;
       border-right: $border-color 1px solid;
+      border-bottom: $border-color 1px solid;
     }
 
     .excel__table__row__content {
       @include flex-center;
-      width: $info-cell-width;
+      min-width: $info-cell-width;
+      width: 120px;
       height: 100%;
+      border-right: $border-color 1px solid;
+      border-bottom: $border-color 1px solid;
+      padding: 0 0.75rem;
+    }
+
+    .excel__table__row__cell {
+      @extend .excel__table__row__content;
+      @include flex-center-left;
+      background-color: #fff;
+      color: #222;
+      outline: none;
+      white-space: nowrap;
+    }
+
+    .active {
+      border: none;
+      outline: 2px solid $green;
+      z-index: 2;
+      //height: $info-cell-height - 1px;
+      //width: 119px;
     }
   }
 }
