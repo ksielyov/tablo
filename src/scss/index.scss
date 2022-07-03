@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import '~normalize.css';
-@import 'header.scss';
+@import 'header';
+@import 'formula';
+@import 'table';
 
 * {
   margin: 0;

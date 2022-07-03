@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+.excel__table {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: $header-height + $info-cell-height;
+
+  .excel__table__row {
+    display: flex;
+    height: $info-cell-height;
+
+    .excel__table__row__numeric {
+      @include flex-center;
+      width: $info-cell-width;
+      height: 100%;
+      border-right: $border-color 1px solid;
+    }
+
+    .excel__table__row__content {
+      @include flex-center;
+      width: $info-cell-width;
+      height: 100%;
+    }
+  }
+}
