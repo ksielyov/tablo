@@ -1,5 +1,24 @@
-$red: blue;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import '~normalize.css';
+@import 'header';
+@import 'formula';
+@import 'table';
+
+@import 'dashboard';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  background-color: $red;
+  font-family: 'Roboto', sans-serif;
+}
+
+.excel {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
 }
