@@ -1,4 +1,5 @@
 import { ExcelComponent } from '@core/excel-component';
+import { generateTable } from './table.template';
 
 /**
  *
@@ -10,6 +11,8 @@ export class Table extends ExcelComponent {
    * @return {string}
    */
   toHTML() {
+    return generateTable();
+    // TEMP! Will remove after end of dynamically render table
     return `
       <div class='excel__table__row'>
         <div class='excel__table__row__numeric'></div>
