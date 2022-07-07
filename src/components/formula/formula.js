@@ -11,8 +11,17 @@ export class Formula extends ExcelComponent {
    */
   constructor($root) {
     super($root, {
-      listeners: ['excel__formula__input'],
+      listeners: ['input', 'click'],
     });
+  }
+
+  /**
+   * @description Worker for input `excel__formula__input`
+   * @param {InputEvent} nativeEvent
+   */
+  onInput(nativeEvent) {
+    console.log(this.$root);
+    console.log(nativeEvent.target.textContent.trim());
   }
 
   /**

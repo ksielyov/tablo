@@ -23,6 +23,16 @@ class Dom {
   }
 
   /**
+   * @param {string} eventType
+   * @param {function} fn
+   * @return {Dom}
+   */
+  on(eventType, fn) {
+    this.$el.addEventListener(eventType, fn);
+    return this;
+  }
+
+  /**
    * @param {string | {$el: Node}} node
    * @return {Dom}
    */
