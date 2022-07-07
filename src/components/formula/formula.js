@@ -7,6 +7,15 @@ export class Formula extends ExcelComponent {
   static className = 'excel__formula';
 
   /**
+   * @param {HTMLElement} $root
+   */
+  constructor($root) {
+    super($root, {
+      listeners: ['excel__formula__input'],
+    });
+  }
+
+  /**
    * @return {string}
    */
   toHTML() {

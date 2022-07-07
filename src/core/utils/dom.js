@@ -57,7 +57,6 @@ export function $(selector) {
 }
 
 /**
- *
  * @param {string} element
  * @param {string} classes
  * @return {HTMLElement}
