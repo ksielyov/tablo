@@ -6,10 +6,11 @@ import { DomListener } from '@core/dom-listener';
 export class ExcelComponent extends DomListener {
   /**
    * @param {HTMLElement} $root
-   * @param {{listeners: []}} options
+   * @param {{listeners: [], name: string}} options
    */
   constructor($root, options = {}) {
     super($root, options.listeners);
+    this.name = options.name || '';
   }
 
   /**
@@ -24,5 +25,12 @@ export class ExcelComponent extends DomListener {
    */
   init() {
     this.initDOMListeners();
+  }
+
+  /**
+   * @description Unsubscribe app listeners
+   */
+  destroy() {
+    this.removeDOMListeners();
   }
 }

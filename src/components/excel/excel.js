@@ -38,5 +38,9 @@ export class Excel {
   render() {
     this.$el.append(this.getRoot());
     this.components.forEach((component) => component.init());
+    // setTimeout(
+    //   () => this.components.forEach((component) => component.destroy()),
+    //   3500
+    // );
   }
 }

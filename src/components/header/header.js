@@ -7,6 +7,23 @@ export class Header extends ExcelComponent {
   static className = 'excel__header';
 
   /**
+   * @param {HTMLElement} $root
+   */
+  constructor($root) {
+    super($root, {
+      name: 'Header',
+      listeners: ['click'],
+    });
+  }
+
+  /**
+   * @param {MouseEvent} nativeEvent
+   */
+  onClick(nativeEvent) {
+    console.log(nativeEvent.target);
+  }
+
+  /**
    * @return {string}
    */
   toHTML() {

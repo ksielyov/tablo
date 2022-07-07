@@ -33,6 +33,16 @@ class Dom {
   }
 
   /**
+   * @param {string} eventType
+   * @param {function} fn
+   * @return {Dom}
+   */
+  removeListener(eventType, fn) {
+    this.$el.removeEventListener(eventType, fn);
+    return this;
+  }
+
+  /**
    * @param {string | {$el: Node}} node
    * @return {Dom}
    */

@@ -22,10 +22,22 @@ export class DomListener {
   initDOMListeners() {
     this.listeners.forEach((listener) => {
       const method = generateDomListenerPrefix(listener);
-      const fn = this[method];
 
-      if (!fn) throw new Error(`${method} has not been set in DomListener`);
-      this.$root.on(listener, fn.bind(this));
+      if (!this[method])
+        throw new Error(`${method} has not been set in ${this.name} component`);
+      this[method] = this[method].bind(this);
+
+      this.$root.on(listener, this[method]);
+    });
+  }
+
+  /**
+   * @description removes subscribed listeners
+   */
+  removeDOMListeners() {
+    this.listeners.forEach((listener) => {
+      const method = generateDomListenerPrefix(listener);
+      this.$root.removeListener(listener, this[method]);
     });
   }
 }
